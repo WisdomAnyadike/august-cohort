@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="mybutton" onclick="changeTheme()"> dark mode </button>
+
+    <!-- i love coding -->
+
+    <input id="input" type="text"> <button id="buttonToggle" onclick="toggle()"> hide</button>
+
+</body>
+
+</html>
+<script>
+    // input.type = 'password'
+
+    //   rgb(255,255,255)
+
+    function genRGB() {
+        // let red = Math.floor(Math.random() * 256)
+        // let green = Math.floor(Math.random() * 256)
+        // let blue = Math.floor(Math.random() * 256)
+        function genDigit() {
+            return Math.floor(Math.random() * 256)
+        }
+        return `rgb(${genDigit()},${genDigit()},${genDigit()})`
+    }
+
+    console.log(genRGB()); //'rgb(255,255,255)'
+    console.log(genRGB());
+    console.log(genRGB());
+
+    // function return4() {
+    //     return 4
+    // }
+
+    // return4()// 4
+
+    // let sum = 5 + return4()
+
+
+    function changeTheme() {
+        console.log(document.body.style.backgroundColor);
+        if (document.body.style.backgroundColor === 'black') {
+            mybutton.innerHTML = 'dark mode'
+            document.body.style.backgroundColor = ''
+        } else {
+            mybutton.innerHTML = 'light mode'
+            document.body.style.backgroundColor = 'black'
+        }
+
+    }
+
+    function toggle() {
+        let input = document.getElementById('input')
+        if (input.type === 'text') {
+            input.type = 'password'
+            buttonToggle.innerHTML = 'show'
+        } else {
+            input.type = 'text'
+            buttonToggle.innerHTML = 'hide'
+        }
+    }
+
+</script>
