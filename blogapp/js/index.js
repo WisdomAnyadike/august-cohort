@@ -79,7 +79,7 @@ function signUp() {
 
     alert('sign up successful')
     console.log(userDatabase);
-    // location.href = './pages/login.html'
+    location.href = './pages/login.html'
 
 
 }

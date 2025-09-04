@@ -6,9 +6,10 @@ html {
     background: #43c6ac;
     background: -webkit-linear-gradient(to right, #43c6ac, #f8ffae);
     background: linear-gradient(to right, #43c6ac, #f8ffae);
-    display: flex;
-    align-items: center;
+    /* display: flex;
     flex-direction: column;
+    align-self: center;
+    justify-content: center; */
     overflow: scroll;
 }
 
@@ -18,7 +19,7 @@ th,
 thead,
 tbody {
     width: 800px;
-    
+
     margin-top: 120px;
     padding: 10px;
     border-collapse: collapse;
