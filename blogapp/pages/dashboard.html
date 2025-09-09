@@ -8,7 +8,38 @@
 </head>
 
 <body>
-    <h1>Welcome <span id="currentUser"> </span></h1>
+    <h1>Welcome <span id="currentUser"> </span> <button onclick="logOut()">log out</button></h1>
+
+
+    <div>
+        <div>
+            <label for="blogtitle"> blog title:</label>
+            <input placeholder="Sqi blog title" id="blogtitle" type="text">
+        </div>
+
+        <div>
+            <label for="blogdescription"> blog description:</label>
+            <input placeholder="blog description" id="blogdescription" type="text">
+        </div>
+
+
+
+    </div>
+    <button id="post" onclick="postBlog()">click here to post </button>
+
+    <div id="blogPreview">
+
+        <div id="blogCard">
+            <p id="forBlogTitle">
+
+            </p>
+            <p id="forBlogDescription">
+
+            </p>
+        </div>
+
+
+    </div>
 </body>
 
 </html>
