@@ -1,15 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
 <script>
+    // foreach map find findindex filter some every reduce 
 
-    
+    let arr = [1, 2, 4, 5]
+    for (let index = 0; index < arr.length; index++) {
+        console.log(arr[index]);
+    }
+
+
+    for (const number of arr) {
+        console.log(number);
+    }
+
+    // regular loop : returns undefined
+    let myloop = arr.forEach((num, i, arr) => {
+        console.log(num);
+        return 'hello'
+    })
+
+    // map loop- not regular : returns an array
+    let newa = arr.map((num, i, myarr) => {
+        console.log(num);
+
+    })
+
+    console.log(newa);
+
+    // find loop- not regular : returns what youre looking for or undefined
+
+    let userArr = [
+        {
+            name: 'habib',
+            age: 45,
+            sex: 'male'
+        },
+        {
+            name: 'testimony',
+            age: 16,
+            sex: 'male'
+        },
+        {
+            name: 'tolu',
+            age: 36,
+            sex: 'female'
+        }
+
+    ]
+    let foundObj = userArr.find((userObj, i, myarr) => {
+        return userObj.age === 16
+    })
+
+
+    // find index loop- not regular : returns the index of what youre looking for or -1
+
+    let foundUserIndex = userArr.findIndex((userObj, i, myarr) => {
+        return userObj.name === 'habib'
+    })
+
+    console.log(foundUserIndex);
+
+
+
+
+
+
+    // function myname() {
+    //     alert('wisdom')
+
+    // }
+
+    let string = 'hello'
+
+    console.log(string.indexOf(' '));
+
+
+    let values = [6, '7', 7, undefined, null, [4, 5], { name: 'doc' }]
+
+
+    let foundString7 = values.find((val) => { return typeof val === "string" })
+    console.log(foundString7);
+    let foundArray45 = values.find((val) => { return Array.isArray(val) })
+    console.log(foundArray45);
+
+    // hints: typeOf ,  Array.isArray('place the array here')
+
+
+    // filter loop- not regular : returns an array of values that fufil my condition
+
+    let filteredFemaleUsers = userArr.filter((user) => { return user.sex === 'female' })
+    console.log(filteredFemaleUsers);
+
+    // some loop- not regular : returns a boolean , checks if at least one val in your array fufils the condition given  , if not it returns false
+
+    let isAtLeastOneUserOlderThan50 = userArr.some((user, i, arr) => { return user.age > 50 })
+    console.log(isAtLeastOneUserOlderThan50);
+
+    // every loop- not regular : returns a boolean , checks if all vals/members in your array fufils the condition given  , if not it returns false
+
+    let areAllUsersYoungerThan50 = userArr.every((user, i, arr) => { return user.age < 50 })
+    console.log(areAllUsersYoungerThan50);
+
+
+
+
 </script>

@@ -37,6 +37,11 @@ function displayBlog() {
     BlogPreview.innerHTML = ""
 
 
+    if (blogDatabase.length === 0) {
+        BlogPreview.innerHTML = 'no blogs currently available ...'
+        return
+    }
+
     for (let index = 0; index < blogDatabase.length; index++) {
         const element = blogDatabase[index];
 
@@ -49,11 +54,13 @@ function displayBlog() {
             ${element.blogdescription}
         </p>
 
-        <button> delete </button> <button onclick="editDescription(${index})"> edit </button>
+        <button onclick="deleteBlog(${index})" > delete </button> <button onclick="editDescription(${index})"> edit </button>
     </div>`
     }
 
 }
+
+
 function logOut() {
     let confirmLogout = window.confirm('are you sure you want to logout?')
     if (confirmLogout) {
@@ -65,11 +72,31 @@ function logOut() {
 }
 
 
+
 function editDescription(i) {
-    let editInput = prompt('edit blog description', `${blogDatabase[i].blogdescription}`)
+    let firstValue = window.prompt('please enter value you want to use to edit', blogDatabase[i].blogdescription)
+    let editedValue = firstValue ? firstValue.trim() : null
+
+    // let obj = blogDatabase[i] // {
+    // blogtitle: 'shsnms' , blogdescription: 'hjksnklas'
+    //}
+    if (editedValue) {
+        // blogDatabase.splice(i, 1, { blogtitle: obj.blogtitle, blogdescription: editedValue })
+        blogDatabase[i].blogdescription = editedValue
+        localStorage.setItem('blogDatabase', JSON.stringify(blogDatabase))
+        displayBlog()
+    }
 
 }
 
+
+function deleteBlog(i) {
+    console.log(i);
+    blogDatabase.splice(i, 1)
+    localStorage.setItem('blogDatabase', JSON.stringify(blogDatabase))
+    displayBlog()
+
+}
 
 
 
@@ -92,3 +119,34 @@ function editDescription(i) {
 
 // let newString = return4() + ' ' + 'hello'
 // console.log(newString);
+
+
+
+1 < 5 ? 5 < 1 ? console.log(25) : console.log('210') : console.log('200');
+
+// if (condition) {
+//     if (condition) {
+
+//     } else {
+
+//     }
+
+// } else {
+
+// }
+
+let a = 25
+let b = 34
+
+
+let number = 4 < 7 ? 7 : 6
+
+console.log(number);
+
+
+let obj = {
+    name: 'tolu',
+    class: 'js2'
+}
+
+obj.class = 'js3'
