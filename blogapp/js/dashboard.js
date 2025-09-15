@@ -1,13 +1,18 @@
 let userDatabase = JSON.parse(localStorage.getItem('augustJsDatabase')) || []
 
 
-let currentUserIndex = Number(localStorage.getItem('augustJsUserIndex'))
+let currentUserIndex =localStorage.getItem('augustJsUserIndex') 
 
 let currentUserObj = userDatabase[currentUserIndex]
 
+function checkUserAuth(params) {
+    if (!currentUserIndex) {
+        window.location.href = '../pages/login.html'
+    }
+}
 
-console.log(currentUserIndex);
-console.log(currentUserObj);
+checkUserAuth()
+
 let blogDatabase = JSON.parse(localStorage.getItem('blogDatabase')) || []
 
 displayBlog()
