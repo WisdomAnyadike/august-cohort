@@ -16,6 +16,8 @@
 
 </html>
 <script>
+    let image = document.getElementById('image')
+    let newArr = []
 
     function pickPicture() {
         let file = document.getElementById('photo').files[0]
@@ -32,9 +34,12 @@
         let reader = new FileReader()
         reader.readAsDataURL(file)
         reader.addEventListener('load', (ev) => {
+            console.log(ev);
             let result = ev.target.result
             console.log(result);
             image.src = result
+            arr.push(result)
+            console.log(arr);
         })
 
 

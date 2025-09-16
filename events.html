@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p class="teach" id="teachme">
+        hello
+        <span> hey</span>
+        <span> js ooo</span>
+
+
+    </p>
+
+    <div ondblclick="jump(event)"> </div>
+</body>
+
+</html>
+<script>
+
+    let ptag = document.getElementById('teachme')
+    ptag.addEventListener('mouseover', changeDiv )
+    ptag.addEventListener('click', run)
+
+    function changeDiv(ev) {
+        ev.target.nextElementSibling.style.width = '200px'
+        ev.target.nextElementSibling.style.height = '200px'
+        ev.target.nextElementSibling.style.backgroundColor = 'purple'
+    }
+
+
+    function run(e) {
+        console.log(e);
+        // e.target.innerHTML = 'im learning events'
+        e.target.firstElementChild.style.color = 'red'
+    }
+
+
+
+
+    let me = {
+        firstThings: [
+            'hello',
+            5,
+            {
+                name: 'tolu',
+                age: 78,
+                skills: [
+                    { name: 'jumping' },
+                    { name: 'runnimg' }
+                ]
+            }
+        ],
+        jump: 'gshjksh'
+    }
+
+    // //mr temi
+    // console.log(me.skills.name);
+
+    // //mr habib
+    // console.log(me.firstThings.skills.name[1]);
+
+    //mr okiki
+    console.log(me['firstThings'][2].skills[1].name);
+
+    // //mr stanley
+    // console.log(me.firstThings.skills.name[1]);
+
+    // // mr dara
+    // console.log(me.firstThings[2].skills.name[1]);
+
+    // //mr shalom
+    // console.log(me.firstThings[2].skills.name[1]);
+
+    // //miss oreofe
+    // console.log(me.firstThings.skills.name);
+
+    // //mr testimony
+    // console.log(me.firstThings[1].skills.name[1]);
+
+
+
+    function add9(num) {
+        console.log(num);
+    }
+
+
+    add9(6)
+    add9(56)
+
+</script>
