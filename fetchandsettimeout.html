@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .yellow {
+        background-color: black;
+        background-color: brown;
+    }
+</style>
+
+<body>
+
+    <button onclick="jump(event)"> click here </button>
+
+    <input class="yellow" type="text"> <button onclick="useInterval(event)"> start </button>
+
+</body>
+
+</html>
+<script>
+
+    function useInterval(ev) {
+        console.log(event);
+        let num = +ev.target.previousElementSibling.value
+
+        let decrementInterval = setInterval(() => {
+            if (num === 0) {
+                clearInterval(decrementInterval)
+                return
+            }
+            ev.target.previousElementSibling.value = --num
+
+        }, 2000);
+
+    }
+
+    // setTimeout(
+    //     jump
+    //     , 5000)
+
+
+    function jump(e) {
+        e.target.innerHTML = 'loading....'
+        e.target.disabled = true
+
+
+        setTimeout(() => {
+            alert('i am jumping')
+            e.target.innerHTML = 'click here'
+            e.target.disabled = false
+        }, 3000);
+
+
+        console.log('wow');
+    }
+
+
+
+
+    // setInterval(() => {
+    //     console.log('hi');
+    // }, 2000)
+
+    let arr = ['one', 'two', 'three']
+
+
+
+    let [_, ...others] = arr
+
+    console.log(others);
+
+    // console.log(secondValue);
+
+    let copiedArr = [...arr]
+
+    // let theValue = arr[1]
+
+    // theValue = 45
+
+    //    let secondValue = arr[1]
+
+    // secondValue = 45
+    // console.log(arr);
+
+
+    let arrNums = [1, 2, 34, 5, 678]
+    let minNum = Math.min(...arrNums)
+
+
+    let obj = {
+        name: "tolu",
+        classes: 'ss2',
+        job: 'student'
+    }
+
+
+
+    let { job, name, classes } = obj
+    console.log(job);
+
+
+    let newArr = [{
+        name: "tolu",
+        classes: 'ss3',
+        job: 'student'
+    }, {
+        name: "tobi",
+        classes: 'ss1',
+        job: 'student'
+    }, {
+        name: "tola",
+        classes: 'ss2',
+        job: 'student'
+    }]
+
+    for (const { name, job, classes } of newArr) {
+
+        console.log(name, job, classes);
+
+    }
+
+
+
+    obj = {...obj, name: 'isaac', age: 27 }
+    console.log(obj);
+
+
+
+
+
+
+
+
+
+</script>
