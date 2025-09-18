@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="card.css">
+</head>
+
+<body>
+    <div id="forProducts" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-evenly;">
+
+
+
+
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    // get post  put delete
+
+    //  Read Create Update delete - CRUD
+
+    // function collectAllProducts(params) {
+    //     fetch('https://dummyjson.com/products').then((response) => { return response.json() }).then((data) => {
+    //         console.log(data.products);
+
+    //     }).catch((error) => { console.log(error.code, error.message); })
+
+    // }
+
+    // collectAllProducts()
+
+
+    async function getAllProducts() {
+        try {
+            let response = await fetch('https://dummyjson.com/products')
+            let data = await response.json()
+            console.log(data);
+
+            if (!data) {
+                alert('some error occured')
+                return
+            }
+
+            data.products.forEach(({ price, images, title }, i) => {
+                forProducts.innerHTML += `   <div class="card">
+
+   <div class="imgBox">
+  <img src="${images[0]}" alt="${title}" class="mouse">
+    </div>
+
+<div class="contentBox">
+  <h3> ${title}</h3>
+  <h2 class="price"> ${price} €</h2>
+  <a href="#" class="buy">See more</a>
+</div>
+
+</div>`
+
+            });
+
+
+
+        } catch (error) {
+            console.log(error.code, error.message);
+        }
+    }
+
+
+    getAllProducts()
+
+
+
+
+    let wisdom = {
+        name: 'wisdom',
+        age: 45,
+        instruct: function () {
+            console.log('wisdom is now instructing');
+        }
+    }
+
+    wisdom.instruct()
+    'hello'.toLocaleLowerCase()
+
+
+
+</script>

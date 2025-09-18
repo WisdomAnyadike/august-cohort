@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="time">
+
+    </p>
+
+
+</body>
+
+</html>
+<script>
+
+
+    let todaysDate = new Date()
+
+
+    function displaySlashedDate(params) {
+
+        console.log(todaysDate);
+        let day = todaysDate.getDate()
+        let month = todaysDate.getMonth() + 1
+        let year = todaysDate.getFullYear()
+        //  day/month/year/
+        return `${day}/${month}/${year}`
+    }
+
+    console.log(displaySlashedDate());
+
+
+    console.log(todaysDate.toISOString());
+
+    function displayTime(params) {
+        return new Date().toLocaleTimeString()
+    }
+
+    setInterval(() => {
+        time.innerHTML = displayTime()
+    }, 1000);
+
+
+
+
+</script>
