@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-auth-compat.js"></script>
+</head>
+
+<body>
+    welcommmeee oooo
+</body>
+
+</html>
+<script>
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyA886Ca58nzw6Eim89pHJdIppOfwey2CIw",
+        authDomain: "augustjscohort.firebaseapp.com",
+        projectId: "augustjscohort",
+        storageBucket: "augustjscohort.firebasestorage.app",
+        messagingSenderId: "928386534654",
+        appId: "1:928386534654:web:2a7b694ac9bac6b92f29af"
+    };
+
+
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+
+    function checkUser() {
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                console.log(user);
+                var uid = user.uid;
+
+            } else {
+                window.location.href = 'login.html'
+            }
+        });
+    }
+
+    checkUser()
+
+
+</script>
