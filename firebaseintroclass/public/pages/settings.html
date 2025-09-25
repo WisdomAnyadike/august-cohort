@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-auth-compat.js"></script>
+</head>
+
+<body>
+    <label for="username"> username</label><br>
+    <input id="usersName" value="loading.." type="text"> <button onclick="updateUserName(event)"> update
+        username</button>
+
+</body>
+
+</html>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyA886Ca58nzw6Eim89pHJdIppOfwey2CIw",
+        authDomain: "augustjscohort.firebaseapp.com",
+        projectId: "augustjscohort",
+        storageBucket: "augustjscohort.firebasestorage.app",
+        messagingSenderId: "928386534654",
+        appId: "1:928386534654:web:2a7b694ac9bac6b92f29af"
+    };
+
+
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+
+
+    function checkUser() {
+        let userImage = document.getElementById('userImage')
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                console.log(user);
+                var uid = user.uid;
+                usersName.value = user.displayName
+            } else {
+                window.location.href = 'login.html'
+            }
+        });
+    }
+
+    checkUser()
+
+    function updateUserName(e) {
+        let button = e.target
+        const user = firebase.auth().currentUser;
+        button.innerHTML = 'loading....'
+        button.disabled = true
+        user.updateProfile({
+            displayName: usersName.value.trim(),
+        }).then(() => {
+            alert('username updated')
+            button.innerHTML = 'update username'
+            button.disabled = false
+        }).catch((error) => {
+            alert(error.message)
+            button.innerHTML = 'update username'
+            button.disabled = false
+        });
+    }
+
+
+</script>
