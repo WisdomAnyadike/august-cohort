@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/chat.css">
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-database-compat.js"></script>
+</head>
+
+<body>
+
+    <div class="chat-container">
+        <div class="header">
+            <h1>Js Chat</h1>
+        </div>
+        <div class="chat-history">
+            <ul id="chat-history-list">
+              
+            </ul>
+        </div>
+        <form>
+            <input type="text" id="input-message" placeholder="Enter your message here...">
+            <button onclick="submitMessage()" id="sendbutton" type="button"> Send </button>
+        </form>
+    </div>
+
+</body>
+
+</html>
+<script src="../js/chat.js"></script>

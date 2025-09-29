@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6e6e6;
+}
+
+.chat-container {
+    width: 100%;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    text-align: left;
+    height: 100vh;
+}
+
+.header {
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.chat-history {
+    height: 65vh;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+.chat-history ul {
+    list-style: none;
+    padding: 0;
+}
+
+.user-message {
+    background-color: #ffffff;
+    border-radius: 10px 10px 0 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+
+}
+
+.chatgpt-message {
+    background-color: #e6e6e6;
+    border-radius: 10px 10px 10px 0;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-left: 70%;
+}
+
+form {
+    padding: 20px;
+    text-align: right;
+
+}
+
+input[type="text"] {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    width: 70%;
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+
+}
